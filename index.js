@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const instruments = require('./libs/instruments')
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 
@@ -15,9 +16,9 @@ app.get('/instruments', async (req, res) => {
 })
 
 // app.get('/instruments/:id', async (req, res) => {
-  
+
 // })
 
-app.listen(3000, () => {
-  console.log('api is running...');
+app.listen(PORT, () => {
+  console.log('api is running on port ' + PORT);
 })
