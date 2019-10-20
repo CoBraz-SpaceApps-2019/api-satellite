@@ -5,13 +5,13 @@ const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 
-app.get('/', async (req, res) => {
+app.get('/', async (_, res) => {
   res.send({
     message: "its ok!"
   })
 })
 
-app.get('/instruments', async (req, res) => {
+app.get('/instruments', async (_, res) => {
   res.send(await instruments.getAll())
 })
 
